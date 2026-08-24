@@ -1,0 +1,565 @@
+{
+  "timestamp": "2026-08-24T19:47:14Z",
+  "gold_sample_size": 25,
+  "techniques": {
+    "technique_a_beautifulsoup_dom": {
+      "name": "BeautifulSoup DOM Tree & Microdata Parser",
+      "overall_accuracy_pct": 38.9,
+      "overall_hallucination_rate_pct": 0.5,
+      "avg_latency_ms": 95.43,
+      "cost_usd_per_listing": 0.0,
+      "fields": {
+        "compound_name": {
+          "accuracy": 24.0,
+          "precision": 16.7,
+          "recall": 6.7,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 20
+        },
+        "developer_name": {
+          "accuracy": 36.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "governorate": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "city": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "district": {
+          "accuracy": 36.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "finishing_level": {
+          "accuracy": 36.0,
+          "precision": 66.7,
+          "recall": 31.6,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 22
+        },
+        "delivery_status": {
+          "accuracy": 4.0,
+          "precision": 100.0,
+          "recall": 4.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "delivery_date": {
+          "accuracy": 92.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 2
+        },
+        "sale_type": {
+          "accuracy": 8.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 23
+        },
+        "payment_type": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "down_payment_amount": {
+          "accuracy": 72.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "down_payment_pct": {
+          "accuracy": 56.0,
+          "precision": 100.0,
+          "recall": 9.1,
+          "hallucination_rate": 7.1,
+          "support_positive_n": 11
+        },
+        "installment_years": {
+          "accuracy": 40.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 15
+        },
+        "amenities": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "floor_number": {
+          "accuracy": 40.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 15
+        },
+        "garden_area_sqm": {
+          "accuracy": 72.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "roof_area_sqm": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 0
+        },
+        "is_negotiable": {
+          "accuracy": 84.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 4
+        }
+      }
+    },
+    "technique_b_deterministic_rules": {
+      "name": "Deterministic Egyptian Rules, Gazetteers & Evidence Verifier",
+      "overall_accuracy_pct": 51.8,
+      "overall_hallucination_rate_pct": 11.6,
+      "avg_latency_ms": 95.45,
+      "cost_usd_per_listing": 0.0,
+      "fields": {
+        "compound_name": {
+          "accuracy": 56.0,
+          "precision": 68.8,
+          "recall": 73.3,
+          "hallucination_rate": 40.0,
+          "support_positive_n": 20
+        },
+        "developer_name": {
+          "accuracy": 56.0,
+          "precision": 71.4,
+          "recall": 35.7,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "governorate": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "city": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "district": {
+          "accuracy": 8.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 77.8,
+          "support_positive_n": 16
+        },
+        "finishing_level": {
+          "accuracy": 48.0,
+          "precision": 60.0,
+          "recall": 56.2,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 22
+        },
+        "delivery_status": {
+          "accuracy": 68.0,
+          "precision": 85.0,
+          "recall": 77.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "delivery_date": {
+          "accuracy": 92.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 2
+        },
+        "sale_type": {
+          "accuracy": 12.0,
+          "precision": 100.0,
+          "recall": 4.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 23
+        },
+        "payment_type": {
+          "accuracy": 32.0,
+          "precision": 50.0,
+          "recall": 47.1,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "down_payment_amount": {
+          "accuracy": 76.0,
+          "precision": 50.0,
+          "recall": 40.0,
+          "hallucination_rate": 5.6,
+          "support_positive_n": 7
+        },
+        "down_payment_pct": {
+          "accuracy": 56.0,
+          "precision": 100.0,
+          "recall": 9.1,
+          "hallucination_rate": 7.1,
+          "support_positive_n": 11
+        },
+        "installment_years": {
+          "accuracy": 44.0,
+          "precision": 33.3,
+          "recall": 18.2,
+          "hallucination_rate": 10.0,
+          "support_positive_n": 15
+        },
+        "amenities": {
+          "accuracy": 72.0,
+          "precision": 72.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "floor_number": {
+          "accuracy": 48.0,
+          "precision": 100.0,
+          "recall": 20.0,
+          "hallucination_rate": 10.0,
+          "support_positive_n": 15
+        },
+        "garden_area_sqm": {
+          "accuracy": 76.0,
+          "precision": 100.0,
+          "recall": 14.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "roof_area_sqm": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 0
+        },
+        "is_negotiable": {
+          "accuracy": 88.0,
+          "precision": 100.0,
+          "recall": 25.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 4
+        }
+      }
+    },
+    "technique_c_gemini_llm": {
+      "name": "Gemini 3.6 Flash Structured LLM Extractor",
+      "overall_accuracy_pct": 38.2,
+      "overall_hallucination_rate_pct": 0.0,
+      "avg_latency_sec": 2.31,
+      "token_usage": {
+        "api_calls": 1,
+        "prompt_tokens": 581,
+        "candidates_tokens": 228,
+        "thoughts_tokens": 1839,
+        "total_tokens": 2648,
+        "total_cost_usd": 0.000112,
+        "total_wall_clock_time_sec": 57.73
+      },
+      "cost_usd_per_listing": 4e-06,
+      "fields": {
+        "compound_name": {
+          "accuracy": 20.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 20
+        },
+        "developer_name": {
+          "accuracy": 36.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "governorate": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "city": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "district": {
+          "accuracy": 36.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "finishing_level": {
+          "accuracy": 16.0,
+          "precision": 100.0,
+          "recall": 4.5,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 22
+        },
+        "delivery_status": {
+          "accuracy": 4.0,
+          "precision": 100.0,
+          "recall": 4.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "delivery_date": {
+          "accuracy": 92.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 2
+        },
+        "sale_type": {
+          "accuracy": 12.0,
+          "precision": 100.0,
+          "recall": 4.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 23
+        },
+        "payment_type": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "down_payment_amount": {
+          "accuracy": 72.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "down_payment_pct": {
+          "accuracy": 56.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 11
+        },
+        "installment_years": {
+          "accuracy": 40.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 15
+        },
+        "amenities": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "floor_number": {
+          "accuracy": 44.0,
+          "precision": 100.0,
+          "recall": 6.7,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 15
+        },
+        "garden_area_sqm": {
+          "accuracy": 72.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "roof_area_sqm": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 0
+        },
+        "is_negotiable": {
+          "accuracy": 88.0,
+          "precision": 100.0,
+          "recall": 25.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 4
+        }
+      }
+    },
+    "technique_d_hybrid_gemini31": {
+      "name": "Hybrid Deterministic Rules + Gemini 3.1 Flash-Lite Refiner",
+      "overall_accuracy_pct": 51.8,
+      "overall_hallucination_rate_pct": 11.6,
+      "avg_latency_sec": 1.78,
+      "token_usage": {
+        "model_name": "gemini-3.1-flash-lite",
+        "total_calls": 22,
+        "prompt_tokens": 12575,
+        "candidates_tokens": 2144,
+        "thoughts_tokens": 0,
+        "total_tokens": 14719,
+        "total_cost_usd": 0.001586,
+        "total_time_sec": 30.06
+      },
+      "cost_usd_per_listing": 6.3e-05,
+      "fields": {
+        "compound_name": {
+          "accuracy": 56.0,
+          "precision": 68.8,
+          "recall": 73.3,
+          "hallucination_rate": 40.0,
+          "support_positive_n": 20
+        },
+        "developer_name": {
+          "accuracy": 56.0,
+          "precision": 71.4,
+          "recall": 35.7,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 16
+        },
+        "governorate": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "city": {
+          "accuracy": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "district": {
+          "accuracy": 8.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 77.8,
+          "support_positive_n": 16
+        },
+        "finishing_level": {
+          "accuracy": 48.0,
+          "precision": 60.0,
+          "recall": 56.2,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 22
+        },
+        "delivery_status": {
+          "accuracy": 68.0,
+          "precision": 85.0,
+          "recall": 77.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "delivery_date": {
+          "accuracy": 92.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 2
+        },
+        "sale_type": {
+          "accuracy": 12.0,
+          "precision": 100.0,
+          "recall": 4.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 23
+        },
+        "payment_type": {
+          "accuracy": 32.0,
+          "precision": 50.0,
+          "recall": 47.1,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "down_payment_amount": {
+          "accuracy": 76.0,
+          "precision": 50.0,
+          "recall": 40.0,
+          "hallucination_rate": 5.6,
+          "support_positive_n": 7
+        },
+        "down_payment_pct": {
+          "accuracy": 56.0,
+          "precision": 100.0,
+          "recall": 9.1,
+          "hallucination_rate": 7.1,
+          "support_positive_n": 11
+        },
+        "installment_years": {
+          "accuracy": 44.0,
+          "precision": 33.3,
+          "recall": 18.2,
+          "hallucination_rate": 10.0,
+          "support_positive_n": 15
+        },
+        "amenities": {
+          "accuracy": 72.0,
+          "precision": 72.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 25
+        },
+        "floor_number": {
+          "accuracy": 48.0,
+          "precision": 100.0,
+          "recall": 20.0,
+          "hallucination_rate": 10.0,
+          "support_positive_n": 15
+        },
+        "garden_area_sqm": {
+          "accuracy": 76.0,
+          "precision": 100.0,
+          "recall": 14.3,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 7
+        },
+        "roof_area_sqm": {
+          "accuracy": 100.0,
+          "precision": 100.0,
+          "recall": 100.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 0
+        },
+        "is_negotiable": {
+          "accuracy": 88.0,
+          "precision": 100.0,
+          "recall": 25.0,
+          "hallucination_rate": 0.0,
+          "support_positive_n": 4
+        }
+      }
+    }
+  }
+}

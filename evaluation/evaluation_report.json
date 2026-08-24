@@ -1,0 +1,196 @@
+{
+  "sample_size": 25,
+  "overall_accuracy_pct": 62.48,
+  "overall_hallucination_rate_pct": 8.93,
+  "field_metrics": {
+    "compound_name": {
+      "accuracy": 48.0,
+      "support_positive_n": 20,
+      "precision": 50.0,
+      "recall": 45.0,
+      "hallucination_rate": 40.0,
+      "hallucinations_count": 2,
+      "truth_null_count": 5
+    },
+    "developer_name": {
+      "accuracy": 56.00000000000001,
+      "support_positive_n": 16,
+      "precision": 71.42857142857143,
+      "recall": 31.25,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 9
+    },
+    "governorate": {
+      "accuracy": 84.0,
+      "support_positive_n": 25,
+      "precision": 95.45454545454545,
+      "recall": 84.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 0
+    },
+    "city": {
+      "accuracy": 44.0,
+      "support_positive_n": 25,
+      "precision": 50.0,
+      "recall": 44.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 0
+    },
+    "district": {
+      "accuracy": 8.0,
+      "support_positive_n": 16,
+      "precision": 0.0,
+      "recall": 0.0,
+      "hallucination_rate": 77.77777777777779,
+      "hallucinations_count": 7,
+      "truth_null_count": 9
+    },
+    "finishing_level": {
+      "accuracy": 48.0,
+      "support_positive_n": 22,
+      "precision": 60.0,
+      "recall": 40.909090909090914,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 3
+    },
+    "delivery_status": {
+      "accuracy": 68.0,
+      "support_positive_n": 25,
+      "precision": 85.0,
+      "recall": 68.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 0
+    },
+    "delivery_date": {
+      "accuracy": 92.0,
+      "support_positive_n": 2,
+      "precision": 100.0,
+      "recall": 0.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 23
+    },
+    "sale_type": {
+      "accuracy": 12.0,
+      "support_positive_n": 23,
+      "precision": 100.0,
+      "recall": 4.3478260869565215,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 2
+    },
+    "payment_type": {
+      "accuracy": 32.0,
+      "support_positive_n": 25,
+      "precision": 50.0,
+      "recall": 32.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 0
+    },
+    "down_payment_amount": {
+      "accuracy": 76.0,
+      "support_positive_n": 7,
+      "precision": 40.0,
+      "recall": 28.57142857142857,
+      "hallucination_rate": 5.555555555555555,
+      "hallucinations_count": 1,
+      "truth_null_count": 18
+    },
+    "down_payment_pct": {
+      "accuracy": 56.00000000000001,
+      "support_positive_n": 11,
+      "precision": 50.0,
+      "recall": 9.090909090909092,
+      "hallucination_rate": 7.142857142857142,
+      "hallucinations_count": 1,
+      "truth_null_count": 14
+    },
+    "installment_years": {
+      "accuracy": 44.0,
+      "support_positive_n": 15,
+      "precision": 28.57142857142857,
+      "recall": 13.333333333333334,
+      "hallucination_rate": 10.0,
+      "hallucinations_count": 1,
+      "truth_null_count": 10
+    },
+    "installment_amount": {
+      "accuracy": 100.0,
+      "support_positive_n": 0,
+      "precision": 100.0,
+      "recall": 100.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 25
+    },
+    "installment_frequency": {
+      "accuracy": 88.0,
+      "support_positive_n": 0,
+      "precision": 0.0,
+      "recall": 100.0,
+      "hallucination_rate": 12.0,
+      "hallucinations_count": 3,
+      "truth_null_count": 25
+    },
+    "cash_discount_pct": {
+      "accuracy": 80.0,
+      "support_positive_n": 5,
+      "precision": 33.33333333333333,
+      "recall": 20.0,
+      "hallucination_rate": 5.0,
+      "hallucinations_count": 1,
+      "truth_null_count": 20
+    },
+    "amenities": {
+      "accuracy": 64.0,
+      "support_positive_n": 20,
+      "precision": 70.58823529411765,
+      "recall": 60.0,
+      "hallucination_rate": 20.0,
+      "hallucinations_count": 1,
+      "truth_null_count": 5
+    },
+    "floor_number": {
+      "accuracy": 48.0,
+      "support_positive_n": 15,
+      "precision": 75.0,
+      "recall": 20.0,
+      "hallucination_rate": 10.0,
+      "hallucinations_count": 1,
+      "truth_null_count": 10
+    },
+    "garden_area_sqm": {
+      "accuracy": 76.0,
+      "support_positive_n": 7,
+      "precision": 100.0,
+      "recall": 14.285714285714285,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 18
+    },
+    "roof_area_sqm": {
+      "accuracy": 100.0,
+      "support_positive_n": 0,
+      "precision": 100.0,
+      "recall": 100.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 25
+    },
+    "is_negotiable": {
+      "accuracy": 88.0,
+      "support_positive_n": 4,
+      "precision": 100.0,
+      "recall": 25.0,
+      "hallucination_rate": 0.0,
+      "hallucinations_count": 0,
+      "truth_null_count": 21
+    }
+  }
+}

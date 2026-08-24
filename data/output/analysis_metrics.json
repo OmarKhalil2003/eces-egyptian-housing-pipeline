@@ -1,0 +1,219 @@
+{
+  "dataset_summary": {
+    "total_records": 560,
+    "sale_records": 280,
+    "rent_records": 280,
+    "detail_html_captured_count": 453,
+    "raw_html_files_on_disk": 582,
+    "portal_verified_count": 0,
+    "portal_verified_pct": 0.0,
+    "governorates_count": 8,
+    "governorates_breakdown": {
+      "Cairo": 347,
+      "Matruh": 108,
+      "Giza": 67,
+      "Alexandria": 21,
+      "Red Sea": 9,
+      "Suez": 4,
+      "Qalyubia": 2,
+      "Dakahlia": 2
+    },
+    "property_types_breakdown": {
+      "apartment": 288,
+      "other": 81,
+      "chalet": 76,
+      "villa": 71,
+      "townhouse": 21,
+      "duplex": 15,
+      "penthouse": 8
+    }
+  },
+  "coverage": {
+    "compound_name": {
+      "count": 344,
+      "pct": 61.43
+    },
+    "developer_name": {
+      "count": 147,
+      "pct": 26.25
+    },
+    "governorate": {
+      "count": 560,
+      "pct": 100.0
+    },
+    "city": {
+      "count": 560,
+      "pct": 100.0
+    },
+    "district": {
+      "count": 543,
+      "pct": 96.96
+    },
+    "finishing_level": {
+      "count": 406,
+      "pct": 72.5
+    },
+    "delivery_status": {
+      "count": 495,
+      "pct": 88.39
+    },
+    "delivery_date": {
+      "count": 5,
+      "pct": 0.89
+    },
+    "sale_type": {
+      "count": 292,
+      "pct": 52.14
+    },
+    "payment_type": {
+      "count": 265,
+      "pct": 47.32
+    },
+    "down_payment_amount": {
+      "count": 125,
+      "pct": 22.32
+    },
+    "down_payment_pct": {
+      "count": 42,
+      "pct": 7.5
+    },
+    "installment_years": {
+      "count": 71,
+      "pct": 12.68
+    },
+    "installment_amount": {
+      "count": 8,
+      "pct": 1.43
+    },
+    "installment_frequency": {
+      "count": 136,
+      "pct": 24.29
+    },
+    "cash_discount_pct": {
+      "count": 12,
+      "pct": 2.14
+    },
+    "amenities": {
+      "count": 529,
+      "pct": 94.46
+    },
+    "floor_number": {
+      "count": 70,
+      "pct": 12.5
+    },
+    "garden_area_sqm": {
+      "count": 31,
+      "pct": 5.54
+    },
+    "roof_area_sqm": {
+      "count": 4,
+      "pct": 0.71
+    },
+    "is_negotiable": {
+      "count": 12,
+      "pct": 2.14
+    }
+  },
+  "statistical_tests": {
+    "compound_premium": {
+      "n_compound": 172,
+      "n_standalone": 108,
+      "compound_median_sqm": 73437.7,
+      "compound_mean_sqm": 82004.3,
+      "compound_iqr": [
+        52631.6,
+        96141.2
+      ],
+      "standalone_median_sqm": 61250.0,
+      "standalone_mean_sqm": 76926.0,
+      "standalone_iqr": [
+        29931.1,
+        113843.7
+      ],
+      "median_premium_pct": 19.9,
+      "mann_whitney_u": 10848.5,
+      "p_value": 0.01801554284949742,
+      "bootstrap_median_diff_95ci": [
+        820.6,
+        29149.3
+      ]
+    },
+    "governorate_price_sqm_sale": {
+      "Alexandria": {
+        "n": 5,
+        "median_price_sqm": 27500.0,
+        "mean_price_sqm": 28735.0
+      },
+      "Cairo": {
+        "n": 131,
+        "median_price_sqm": 61068.7,
+        "mean_price_sqm": 71165.0
+      },
+      "Dakahlia": {
+        "n": 2,
+        "median_price_sqm": 20164.2,
+        "mean_price_sqm": 20164.2
+      },
+      "Giza": {
+        "n": 39,
+        "median_price_sqm": 51666.7,
+        "mean_price_sqm": 53529.6
+      },
+      "Matruh": {
+        "n": 94,
+        "median_price_sqm": 97965.1,
+        "mean_price_sqm": 105771.6
+      },
+      "Qalyubia": {
+        "n": 1,
+        "median_price_sqm": 8712.1,
+        "mean_price_sqm": 8712.1
+      },
+      "Red Sea": {
+        "n": 4,
+        "median_price_sqm": 101195.9,
+        "mean_price_sqm": 155247.5
+      },
+      "Suez": {
+        "n": 4,
+        "median_price_sqm": 60368.8,
+        "mean_price_sqm": 61561.7
+      }
+    },
+    "finishing_level_sale": {
+      "fully finished": {
+        "n": 51,
+        "median_price_sqm": 81381.8,
+        "mean_price_sqm": 90547.0
+      },
+      "furnished": {
+        "n": 35,
+        "median_price_sqm": 80769.2,
+        "mean_price_sqm": 104201.5
+      },
+      "semi-finished": {
+        "n": 8,
+        "median_price_sqm": 50414.4,
+        "mean_price_sqm": 54095.7
+      },
+      "super lux": {
+        "n": 76,
+        "median_price_sqm": 77763.8,
+        "mean_price_sqm": 78775.9
+      }
+    },
+    "rental_intensity": {
+      "furnished_median_monthly_sqm": 333.3,
+      "unfurnished_median_monthly_sqm": 329.2,
+      "furnished_to_unfurnished_ratio": 1.01
+    },
+    "financing_structures": {
+      "total_listings_with_installments": 71,
+      "tier_10_12_years_count": 31,
+      "tier_10_12_years_pct": 43.66,
+      "cash_discount_mean_pct": 39.1,
+      "cash_discount_min_pct": 5.0,
+      "cash_discount_max_pct": 54.0
+    }
+  }
+}
