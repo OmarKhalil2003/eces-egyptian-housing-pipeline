@@ -4,6 +4,119 @@
 
 ---
 
+## Quickstart: Setup & Configuration
+
+This project is built to run immediately from a clean clone with **zero required API setup** for deterministic extraction ($0 token cost, 100% offline auditable), or containerized via **Docker** for seamless cross-platform reproducibility.
+
+### 1. Environment Variables & API Configuration
+
+The pipeline reads configurations from environment variables or a root `.env` file (see [`.env.example`](file:///./.env.example)).
+
+| Environment Variable | Required | Default Value / Credential | Description |
+| :--- | :---: | :--- | :--- |
+| `ALGOLIA_APP_ID` | **Yes** | `LL8IZ711CS` | Bayut Egypt's production Algolia application identifier. |
+| `ALGOLIA_SEARCH_API_KEY` | **Yes** | `07de0a8209b2f3cd921152dfe39310a9` | Bayut Egypt's public front-end search API key. |
+| `ALGOLIA_SALE_INDEX` | Optional | `bayut-eg-production-ads-city-level-score-ar` | Primary Algolia search index for Egyptian property listings. |
+| `GEMINI_API_KEY` | Optional | `""` (Empty) | Google Gemini API key (only required when running `--benchmark` or `--hybrid` modes). |
+| `GEMINI_MODEL` | Optional | `gemini-3.1-flash-lite` | Gemini model endpoint used for semantic auditing and benchmarking. |
+
+#### Create Your `.env` File (Copy & Paste):
+
+```bash
+# Linux / macOS / Git Bash
+cat << 'EOF' > .env
+# Bayut Egypt Algolia Search Credentials (Production Front-end Client)
+ALGOLIA_APP_ID=LL8IZ711CS
+ALGOLIA_SEARCH_API_KEY=07de0a8209b2f3cd921152dfe39310a9
+ALGOLIA_SALE_INDEX=bayut-eg-production-ads-city-level-score-ar
+
+# Optional: Google Gemini API Key (Only needed for --benchmark or --hybrid)
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-3.1-flash-lite
+EOF
+```
+
+```powershell
+# Windows PowerShell
+@"
+ALGOLIA_APP_ID=LL8IZ711CS
+ALGOLIA_SEARCH_API_KEY=07de0a8209b2f3cd921152dfe39310a9
+ALGOLIA_SALE_INDEX=bayut-eg-production-ads-city-level-score-ar
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-3.1-flash-lite
+"@ | Out-File -FilePath .env -Encoding utf8
+```
+
+---
+
+## Containerization & Docker Quickstart
+
+For maximum portability and evaluation ease, the entire pipeline is containerized with [Dockerfile](file:///./Dockerfile) and [docker-compose.yml](file:///./docker-compose.yml). Host volumes (`./data` and `./evaluation`) are automatically mounted so all generated deliverables (XLSX, CSV, JSONL, evaluation metrics, logs) persist directly to your local file system.
+
+### Running with Docker Compose (Recommended)
+
+```bash
+# 1. Run full pipeline end-to-end (Tests, 25-Gold Evaluation, XLSX/CSV/JSONL Export, Metrics)
+docker compose run --rm pipeline
+
+# 2. Run 4-way comparative methodology benchmark (BS4 vs Rules vs Gemini 3.6 vs Hybrid Gemini 3.1)
+docker compose run --rm benchmark
+
+# 3. Run automated unit test suite
+docker compose run --rm test
+
+# 4. Run 25 hand-labeled gold evaluation benchmark
+docker compose run --rm eval
+
+# 5. Fetch & cache any missing detail HTML pages
+docker compose run --rm fetch
+```
+
+### Running with Standard Docker CLI
+
+```bash
+# Build the production image
+docker build -t eces-housing-pipeline .
+
+# Run the complete pipeline end-to-end with persistent volume mounts
+docker run --rm \
+  -v "$(pwd)/data:/app/data" \
+  -v "$(pwd)/evaluation:/app/evaluation" \
+  eces-housing-pipeline
+
+# Run unit tests inside the container
+docker run --rm eces-housing-pipeline python run.py --test
+
+# Run gold evaluation inside the container
+docker run --rm \
+  -v "$(pwd)/evaluation:/app/evaluation" \
+  eces-housing-pipeline python run.py --eval
+```
+
+---
+
+## Local Execution Quickstart
+
+If running directly on host Python ($3.10+$):
+
+```bash
+# 1. Clone the repository and enter directory
+cd eces
+
+# 2. Install dependencies
+pip install -r requirements.txt
+pip install -e .
+
+# 3. Run complete pipeline end-to-end ($0 cost, 100% deterministic, <8 seconds)
+python run.py --all
+```
+
+### One-Click Launchers (Windows):
+* **Windows CMD**: Double-click `run.bat` or execute `run.bat` in Command Prompt.
+* **Windows PowerShell**: Execute `powershell -ExecutionPolicy Bypass -File run.ps1`
+
+---
+
 ## 1. Architecture & Data Provenance
 
 Egyptian real estate listings frequently embed critical research variables — payment terms, finishing status, delivery horizons, compound names, and developer entities — inside unstructured free-text descriptions written in mixed Arabic and English.
@@ -222,6 +335,8 @@ A **hallucination (false positive)** is strictly defined as any case where **Gro
 
 > **Takeaway**: The pipeline **never hallucinates ungrounded entities or dates out of thin air** (guaranteed by Tier-3 Verbatim Evidence Verification). The reported false-positive rate is primarily driven by spatial taxonomy granularity and gold dataset edge cases.
 
+---
+
 ## 6. One-Command Automation & CLI Runner
 
 The entire pipeline, benchmark evaluation, dataset export, and metrics generation can be executed via a single command:
@@ -241,20 +356,16 @@ python run.py --export            # Re-export XLSX, CSV, and JSONL datasets
 python run.py --metrics           # Recompute statistical analysis metrics JSON
 ```
 
-### One-Click Convenience Launchers:
-* **Windows CMD**: Double-click `run.bat` or run `run.bat`
-* **Windows PowerShell**: Run `powershell -ExecutionPolicy Bypass -File run.ps1`
-
 ---
 
 ## 7. Execution Time & Resource Profiling
 
-### Mode A: Deterministic Production Pipeline (`python run.py --all`)
+### Mode A: Deterministic Production Pipeline (`python run.py --all` or `docker compose run pipeline`)
 * **API Token Cost**: **$0.00 USD** (100% local deterministic extraction, zero external API spend).
-* **Hardware Environment**: Standard CPU (Intel Core i7 / 16 GB RAM / Windows).
+* **Hardware Environment**: Standard CPU (Intel Core i7 / 16 GB RAM / Docker container).
 * **Total Execution Time**: **< 8 seconds** for all 560 listings (tests, eval, Excel generation, and metrics).
 
-### Mode B: Hybrid Semantic Refiner & Benchmark (`python run.py --benchmark`)
+### Mode B: Hybrid Semantic Refiner & Benchmark (`python run.py --benchmark` or `docker compose run benchmark`)
 * **Gemini Model**: `gemini-3.1-flash-lite`
 * **Token Cost ($n=25$)**: **12,410 tokens** ($0.000063 USD per listing).
 * **Latency**: **~1.78 seconds** per listing.

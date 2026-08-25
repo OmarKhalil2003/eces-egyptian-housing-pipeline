@@ -1,0 +1,68 @@
+services:
+  # 1. Main Pipeline Runner (Deterministic, $0 cost, <8s)
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eces-housing-pipeline
+    environment:
+      - ALGOLIA_APP_ID=${ALGOLIA_APP_ID:-LL8IZ711CS}
+      - ALGOLIA_SEARCH_API_KEY=${ALGOLIA_SEARCH_API_KEY:-07de0a8209b2f3cd921152dfe39310a9}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.1-flash-lite}
+    volumes:
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+      - ./report.md:/app/report.md
+    command: python run.py --all
+
+  # 2. 4-Way Comparative Benchmark Runner
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eces-benchmark
+    environment:
+      - ALGOLIA_APP_ID=${ALGOLIA_APP_ID:-LL8IZ711CS}
+      - ALGOLIA_SEARCH_API_KEY=${ALGOLIA_SEARCH_API_KEY:-07de0a8209b2f3cd921152dfe39310a9}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.1-flash-lite}
+    volumes:
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+    command: python run.py --benchmark
+
+  # 3. Unit Test Suite Runner
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eces-test
+    volumes:
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+    command: python run.py --test
+
+  # 4. 25 Gold Listing Evaluation Runner
+  eval:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eces-eval
+    volumes:
+      - ./data:/app/data
+      - ./evaluation:/app/evaluation
+    command: python run.py --eval
+
+  # 5. Detail HTML Fetcher
+  fetch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eces-fetch
+    environment:
+      - ALGOLIA_APP_ID=${ALGOLIA_APP_ID:-LL8IZ711CS}
+      - ALGOLIA_SEARCH_API_KEY=${ALGOLIA_SEARCH_API_KEY:-07de0a8209b2f3cd921152dfe39310a9}
+    volumes:
+      - ./data:/app/data
+    command: python run.py --fetch
